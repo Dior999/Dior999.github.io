@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ios-checkbox.html</title>
+	<style>
+		.turn-on{
+			display: none;
+		}
+		.button{
+			width: 160px;
+			height: 88px;
+			margin:auto; 
+			margin-top:calc(50vh - 44px);
+			box-sizing:border-box;
+		}
+		.click {
+   			display: block;
+   			background-color: #DDD;
+    		height: 100%;
+            width: 100%;
+            border-radius: 9999px;
+            cursor: pointer;
+		}
+		.turn-on:checked + .click{
+			background-color: #6EDC60 ; 
+			transition: all 0.2s ease;	
+			
+		}
+		.button label:before{
+			content: "";
+			width: 80px;
+			height: 80px;
+    		border-radius: 40px;
+    		background-color: white;
+    		display: block;
+    		position: relative;
+    		top:4px;
+    		left: 5px;
+    		transition: all 0.2s ease;
+		}
+		.turn-on:checked + .click:before {
+            left: 75px;
+        }
+		.twitter-like-box{
+			width: 60px;
+			height: 90px;
+			margin: auto;
+			margin-top: 50px;
+		
+		}
+		.twitter-like-select{
+			display: none;
+		}
+		.twitter-like-swich{
+			display: block;
+			height: 100%;
+			width: 100%;
+			cursor: pointer;
+			background-image: url(https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png);
+			background-repeat: no-repeat;
+			background-position:-20px 0px;
+		}
+		.twitter-like-select:checked + .twitter-like-swich{
+			background-position: -2820px 0px;
+			transition: background 1s steps(28);
+			
+		}
+
+	</style>
+</head>
+<body>
+	<div class="button">
+		<input id="input" type="checkbox" class="turn-on" />
+        <label for="input" class="click"></label> 
+	</div>
+	<div class="twitter-like-box">
+		<input type="checkbox" id="twitter-like-input" class="twitter-like-select" >
+		<label for="twitter-like-input" class="twitter-like-swich"></label>
+	</div>
+
+</body>
+</html>
