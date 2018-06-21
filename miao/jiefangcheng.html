@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		alert('现在输入一元二次方程组的取值')
+		var a = +prompt("输入a的值：",'')
+		var b = +prompt("输入b的值：",'')
+		var c = +prompt("输入c的值：",'')
+		var delta = b**2 - 4 * a * c
+		var s_delta = Math.sqrt(delta)
+		if (isNaN(a))
+			alert('请输入数字！')
+		else if (isNaN(b))
+			alert('请输入数字！')
+		else if (isNaN(c))
+			alert('请输入数字！')
+		document.writeln('一元二次方程组:'+'<br>')
+		document.writeln(a+'x^2'+'+'+b+'x'+'+'+c+'='+'0'+'<br>')
+		if (delta > 0) {
+			var x1 = (-b+s_delta)/(2*a)
+			var x2 = (-b-s_delta)/(2*a)
+			document.writeln('第一个解：'+x1+'<br>')
+			document.writeln('第二个解：'+x2)
+		} else if(delta == 0) {
+			var x1 = (-b+s_delta)/(2*a)
+			document.writeln('唯一解：'+x1+'<br>')
+		} else if (delta < 0 ){
+			var front = (-b)/(2*a)
+			var delta = -(b**2 - 4 * a * c)
+			var s_delta = Math.sqrt(delta)
+			var x1 = front+'+'+s_delta/(2*a)
+			var x2 = front+'-'+s_delta/(2*a)
+			document.writeln('第一个复数解：'+x1+'i'+'<br>')
+			document.writeln('第二个复数解：'+x2+'i'+'<br>')
+		}
+		alert('现在输入二元一次方程组的取值')
+		var d = +prompt("输入d的值：",'')
+		var e = +prompt("输入e的值：",'')
+		var f = +prompt("输入f的值：",'')
+		var h = +prompt("输入h的值：",'')
+		var i = +prompt("输入i的值：",'')
+		var j = +prompt("输入j的值：",'')
+		if (isNaN(d))
+			alert('请输入数字！')
+		else if (isNaN(e))
+			alert('请输入数字！')
+		else if (isNaN(f))
+			alert('请输入数字！')
+		if (isNaN(h))
+			alert('请输入数字！')
+		else if (isNaN(i))
+			alert('请输入数字！')
+		else if (isNaN(j))
+			alert('请输入数字！')
+		document.writeln('二元一次方程组:'+'<br>')
+		document.writeln(d+'x'+'+'+e+'y'+"+"+'='+f+'<br>')
+		document.writeln(h+'x'+'+'+i+'y'+"+"+'='+j+'<br>')
+		if (d/h!=e/i){
+			var x3 = (e*j-i*f)/(e*h-d*i)
+			var x4 = (d*j-h*f)/(d*i-e*h)
+			document.writeln('解为x：'+x3+'<br>')
+			document.writeln('解为y：'+x4+'<br>')
+		} else if ((d/h)==(e/i)==(f/j)){
+			document.writeln('此二元一次方程组：'+'<br>'+'有无数解')
+		} else if (((d/h)==(e/i))&&(d/h)!=(f/j)){
+			document.writeln('此二元一次方程组：'+'<br>'+'无解')
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
