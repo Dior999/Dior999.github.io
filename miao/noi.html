@@ -83,10 +83,11 @@
   </script>
 
   <script id="ch0103/13">
-    var theNumbera = Number(prompt('输入位数'))
-    var theNumberb = Number(prompt('输入位数'))
-    var theNumberc = Number(prompt('输入位数'))
-    console.log(Number(theNumberc) + Number(theNumberb) + Number(theNumbera) )
+    var a = Number(prompt('输入数字'))
+    var a1 = (a % 10)
+    var a10 = (parseInt(a / 10)) % 10
+    var a100 = parseInt(a / 100)
+    console.log(a100  + a10*10  + a1*100)
   </script>
 
   <script id="ch0103/14">
