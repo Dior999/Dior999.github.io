@@ -505,13 +505,60 @@
   console.log(sum)
 </script>
 <script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+  var a = Number(prompt())
+  var b = Number(prompt())
+  var max = Math.max(a,b)
+  var min = Math.min(a,b)
+  var product = a * b
+  var reverta
+  var revertb
+  var x
+  var y
+  for (i = max; i <= product; i++){
+    reverta = i % a
+    revertb = i % b
+    if (reverta == 0 && revertb == 0){
+      console.log(i)//最小公倍数
+      break;
+    }
+  }
+  for (v = min; v > 0; v--){
+    x = a % v
+    y = b % v 
+    if (x == 0 && y == 0 ){
+      console.log(v)//最大公约数
+      break;
+    }
+  }
   
 </script>
 <script id="7" sample-input="" sample-output="" comment="敲7">
+  var i
+  for (i = 1; i <= 100; i++){
+    if ( i % 10 == 7){
+      console.log(i)
+    } else if (i % 7 == 0){
+      console.log(i)
+    }
+  }
+
   
 </script>
 <script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
-  
+  var a = Number(prompt())
+  var h = a 
+  var l = 0
+  while (h - l >0.0000001 ){
+    var x = (h + l) / 2 
+    if (x ** 2 == a){
+      break;
+    } else if (x ** 2 > a){
+      h = x 
+    } else if (x ** 2 < a ){
+      l = x
+    }
+  }
+  console.log((x).toFixed(3))
 </script>
  
 
