@@ -315,7 +315,7 @@
         x++
       }
     }
-    console.log ((sum / x)).toFixed(3)
+    console.log ((sum / x)).toFixed(2)
   </script>
 
 
@@ -330,7 +330,7 @@
       x++
     }
     var y = (sum / x).toFixed(2)
-    console.log ('$' + sy)
+    console.log ('$' + y)
   </script>
 
 
@@ -389,7 +389,19 @@
     console.log(sum)
   </script>
 
-  <script id="ch0105/0"></script>
+  <script id="ch0105/08">
+    var angleNumber = Number(prompt())
+    var i
+    var angele
+    var sum = 0
+    var x  
+    for (i = 0; i < angleNumber-1; i++){
+      angle = Number(prompt())
+      sum = sum + angle
+    }
+    x = (angleNumber - 2) * 180 - sum
+    console.log(x)
+  </script>
 
   <script id="ch0105/0"></script>
 
