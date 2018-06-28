@@ -303,6 +303,98 @@
   <script id="ch0104/20"></script> -->
 
 
+  <script id="ch0105/01">
+    var theNumber
+    var i = 0 
+    var sum = 0 
+    var x = 0 
+    for (i = 0; i < 3; i++){
+      theNumber = Number(prompt())
+      if (theNumber >= 15 && theNumbe <= 25){
+         sum = sum + theNumber
+        x++
+      }
+    }
+    console.log ((sum / x)).toFixed(3)
+  </script>
+
+
+  <script id="ch0105/02">
+    var theNumber
+    var i = 0 
+    var sum = 0 
+    var x = 0 
+    for (i = 0; i < 12; i++){
+      theNumber = Number(prompt())
+      sum = sum + theNumber
+      x++
+    }
+    var y = (sum / x).toFixed(2)
+    console.log ('$' + sy)
+  </script>
+
+
+  <script id="ch0105/05">
+    var peopleNumber = Number(prompt())
+    var i
+    var fraction
+    var b = 0 
+    var s = 0 
+    for (i = 0; i<peopleNumber; i++){
+      fraction = Number(prompt())
+      if (b < fraction){
+        b = fraction
+      } else {
+        s = fraction
+      }
+    }
+    console.log(b)
+  </script>
+
+  <script id="ch0105/06">
+    var peopleNumber = Number(prompt())
+    var i
+    var fraction
+    var b = 0 
+    var s = 0 
+    for (i = 0; i<peopleNumber; i++){
+      fraction = Number(prompt())
+      if (b < fraction){
+        b = fraction
+      } else if(s = fraction){
+        s = 0
+      } else{
+        s = fraction
+      }
+    }
+    console.log(b-s)
+  </script>
+
+  <script id="ch0105/07">
+    var day = Number(prompt())
+    var i 
+    var x
+    var medal
+    var sum = 0
+    var z = 0
+    for (i = 0; i < day; i++){
+      z = 0
+      for (x = 0; x < day; x++){
+        medal = Number(prompt())
+        sum = sum + medal
+        z = z + medal
+      }
+      console.log(z)
+    }
+    console.log(sum)
+  </script>
+
+  <script id="ch0105/0"></script>
+
+  <script id="ch0105/0"></script>
+
+
+
 
 
 
@@ -454,6 +546,9 @@
     }
   } 
 </script>
+
+
+
 <script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
   var a = Number(prompt())
   var i
@@ -472,8 +567,10 @@
       console.log('NO')
     }
   }
-
 </script>
+
+
+
 <script id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
   var a
   var i
@@ -489,6 +586,9 @@
     }
   }
 </script>
+
+
+
 <script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
   var a = Number(prompt()) 
   var n = 1
@@ -506,6 +606,9 @@
   }
   console.log(sum)
 </script>
+
+
+
 <script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
   var a = Number(prompt())
   var b = Number(prompt())
@@ -534,6 +637,9 @@
   }
   
 </script>
+
+
+
 <script id="7" sample-input="" sample-output="" comment="敲7">
   var i
   for (i = 1; i <= 100; i++){
@@ -543,9 +649,10 @@
       console.log(i)
     }
   }
-
-  
 </script>
+
+
+
 <script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
   var a = Number(prompt())
   var h = a 
@@ -564,6 +671,114 @@
 </script>
  
 
+
+ <script comment="分解质因数">
+  var primeNumber = function(t){  //判断是否素数
+    var i
+    var x = 0
+    for (var i = 2; i <= t / 2; i++) {
+      if (t % i == 0) {
+        x++
+      }
+    }
+    if (t == 1) {
+       return false
+    } else {
+      if (x == 0) {
+        return true
+      } else{
+        return false
+      }
+    }
+  }
+  var a = Number(prompt())
+  var n = a
+  var i = 2
+  while (n > 1){
+    if (primeNumber(i)==true){
+      if (n % i ==0){
+        n = n / i
+        console.log(i)
+      } else{
+        i++
+      }
+    } else{
+      i++
+    }
+  }
+</script>
+
+
+<script comment="找出最小的能被1到20所有数整除的数">
+  var x = 1 //除数的起点
+  var commonMultiple = function(a,b){
+    var max = Math.max(a,b)
+    var min = Math.min(a,b)
+    for (var i = max; i <= a*b; i++){
+      var reverta = i % a
+      var revertb = i % b
+      if (reverta == 0 && revertb == 0){
+        return i //最小公倍数
+        break;
+      }
+    }
+  }
+  var result = commonMultiple(1,2) 
+  while (x <= 20){
+    result = commonMultiple(result,x)//依次求出最小公倍数
+    x = x + 1
+  }
+  console.log(result)
+</script>
+
+
+<script comment="将一个数字的各位加起来求和">
+  var input = Number(prompt())
+  var summingUp = function(a){
+    var b = a
+    var c = a
+    var n = 1
+    var sum = 0
+    while (a % 10 != a){
+      n = n + 1
+      a = parseInt(a / 10)
+    }
+    for (var i = 0;i < n;i++ ){
+      sum = (b % 10) + sum
+      b = parseInt(b / 10)
+    }
+    return sum
+  }
+  while ( input >= 10){
+    input = summingUp(input)
+  }
+  console.log(input)
+</script>
+
+
+<script comment="毕达哥拉斯三元组">
+  var a 
+  var b
+  var c
+  var isPythagorean = function(x,y,z){//判断是否是勾股数
+    if (x**2+y**2==z**2){
+      return true
+    } else {
+      return false
+    }
+  }
+  for(a = 2; a<498; a++){
+    for (b = 3; b<499; b++){
+      for (c = 4; c<500; c++){
+        if (isPythagorean(a,b,c)==true){
+          if (a+b+c==1000&&a<c&&b<c&&a<b){
+             console.log(a,b,c)
+          } 
+        }
+      }
+    }
+  }
+</script>
 </head>
 <body>
   
