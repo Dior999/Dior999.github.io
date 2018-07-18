@@ -74,6 +74,17 @@ var dior999 = {
     }
     return array
   },
+  fill: function(array, value, start=0, end=array.length){
+    if (start==0&&end==array.length){
+      return array.map(function(){
+        return value
+      })
+    }
+    for (var i =start; i < end; i++){
+      array[i]=value
+    }
+    return array
+  },
 
 }
 
