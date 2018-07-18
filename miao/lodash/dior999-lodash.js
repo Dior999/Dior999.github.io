@@ -56,7 +56,24 @@ var dior999 = {
     }
     return array
 
-  }
+  },
+  dropRight: function(array, n=1){
+    var x = array.length
+    if (n>=x){
+      return []
+    }
+    if (n==0){
+      return array
+    } else if (n==1){
+      array.pop()
+      return array
+    }
+
+    for (var i =0; i < n;i++){
+      array.pop()
+    }
+    return array
+  },
 
 }
 
