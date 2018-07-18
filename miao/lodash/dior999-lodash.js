@@ -85,6 +85,20 @@ var dior999 = {
     }
     return array
   },
+  flatten: function(array){
+    var r = []
+    for (var i = 0; i < array.length; i++){
+      if (!Array.isArray(array[i])){
+        r.push(array[i])
+      } else {
+        for (var j = 0; j < array[i].length; j++){
+          r.push(array[i][j])
+        }
+      }
+    }
+    return r
+  },
+
 
 }
 
