@@ -18,9 +18,27 @@ var dior999 = {
     }
     array = ary
     return array
+  },
+  difference: function(array, ...values){
+    var r = []
+    for (var i = 0; i < values.length; i++){
+      r = r.concat(values[i])
+    }
+    for (var j = 0; j <array.length; j++){
+      for (var k = 0; k < r.length; k ++){
+        if (array[j]==r[k]){
+          array[j]=null
+        }
+      }
+    }
+    var y = []
+    for (var l = 0; l < array.length;l++){
+      if (array[l]!=null){
+        y.push(array[l])
+      }
+    }
+    return y
   }
-
-
 }
 
 
