@@ -158,25 +158,21 @@ var dior999 = {
     }
     return obj
   },
-  //反向输出参数
   flip: function (func){
     return function(...args){
       return func(...args.reverse())
     }
   },
-  //原函数返回真，此函数返回假
   negate: function(func){
     return function(...args){
       return !func(...args)
     }
   },
-  //接受数组，展开数组返回给原函数
-  spread:function(func,start=0){
+  spread: function(func,start=0){
     return function(ary){
       return func.apply(null,ary)
     }
   },
-  
 }
 
 
