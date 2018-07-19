@@ -149,7 +149,7 @@ var dior999 = {
   },
   last:function (array){
     var x = array.length
-    return array.(x-1)
+    return array[x-1]
   },
   keyBy:function(ary,key){
     var obj = {}
