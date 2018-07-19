@@ -98,8 +98,85 @@ var dior999 = {
     }
     return r
   },
-
-
+  flattenDeep: function(array){
+    return this.flattenDepth(array,Infinity)
+  },
+  flattenDepth:function (array, depth = 1) {
+    if (depth === 0) {
+      return array.slice()
+    }
+    var result = []
+    for(var i = 0; i<array.length; i++) {
+      if (Array.isArray(array[i])) {
+        var tmp = this.flattenDepth(array[i], depth - 1)
+        result = [...result, ...tmp]
+      } else {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+  fromPairs: function(pairs){
+    var obj = {}
+    for (var i = 0; i < pairs.length; i++){
+      obj[pairs[i][0]] = pairs[i][1]
+    }
+    return obj
+  },
+  head: function (array){
+    return array[0]
+  },
+  indexOf: function(array, value, fromIndex=0){
+    for (var i = fromIndex; i < array.length; i++){
+      if (array[i]==value){
+        return i
+      }
+    }
+    return -1
+  },
+  initial: function(array){
+    array.pop()
+    return array
+  },
+  join: function(array, separator=','){
+    var str = ""
+    var x = array.length
+    for (var i = 0; i < array.length-1; i++){
+      str = str + array[i] + separator
+    }
+    str = str + array[x-1]
+    return str
+  },
+  last:function (array){
+    var x = array.length
+    return array.(x-1)
+  },
+  keyBy:function(ary,key){
+    var obj = {}
+    for (var people of ary){
+      obj[people[key]] = people
+    }
+    return obj
+  },
+  //反向输出参数
+  flip: function (func){
+    return function(...args){
+      return func(...args.reverse())
+    }
+  },
+  //原函数返回真，此函数返回假
+  negate: function(func){
+    return function(...args){
+      return !func(...args)
+    }
+  },
+  //接受数组，展开数组返回给原函数
+  spread:function(func,start=0){
+    return function(ary){
+      return func.apply(null,ary)
+    }
+  },
+  
 }
 
 
