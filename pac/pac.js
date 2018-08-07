@@ -3,6 +3,7 @@
 
 var rules = [
   "||mozilla.org",
+  "||regexper.com",
   "||jsbin.com",
   "||500px.org",
   "||alf.nu",
