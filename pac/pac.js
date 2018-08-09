@@ -3,9 +3,9 @@
 
 var rules = [
   "||mozilla.org",
-  "||regexper.com",
+  "||explore.org",
+  "||github.com",
   "||jsbin.com",
-  "||explore.org',
   "||500px.org",
   "||alf.nu",
   "||2dbook.com",
