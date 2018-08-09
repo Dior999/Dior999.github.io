@@ -5,6 +5,7 @@ var rules = [
   "||mozilla.org",
   "||regexper.com",
   "||jsbin.com",
+  "||explore.org',
   "||500px.org",
   "||alf.nu",
   "||2dbook.com",
