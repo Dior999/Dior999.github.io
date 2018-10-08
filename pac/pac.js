@@ -2,6 +2,7 @@
 // https://github.com/clowwindy/gfwlist2pac
 
 var rules = [
+  "||github.com",
   "||mozilla.org",
   "||explore.org",
   "||github.com",
