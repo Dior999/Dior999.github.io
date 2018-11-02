@@ -7102,6 +7102,6 @@ var banned = new Set([
 ])
 
 function getProxy() {
-    return Math.random() < 0.8 ? 'HTTPS c.cddm.me:443' : 'HTTPS cddm.me:443'
+    return 'HTTPS cddm.me:443'
 }
 
